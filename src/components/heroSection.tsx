@@ -1,18 +1,31 @@
+'use client'
+
 import Image from "next/image";
 import hero from "@/public/image/hero.jpg";
 import { Search } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function HeroSection() {
+     const router = useRouter();
+  const [value, setValue] = useState("");
+
+  const handleSearch = () => {
+    if (!value.trim()) return;
+
+    router.push(`/events?search=${encodeURIComponent(value.trim())}`);
+  };
+
     return (
         <section className="relative w-full h-[60vh] md:h-[80vh] overflow-hidden">
-            <Image 
-                src={hero} 
-                alt="hero photo" 
-                fill 
-                className="object-cover" 
+            <Image
+                src={hero}
+                alt="hero photo"
+                fill
+                className="object-cover"
                 priority
             />
-            
+
             <div className="absolute inset-0 bg-black/50" />
 
 
@@ -25,14 +38,24 @@ export default function HeroSection() {
                 </h3>
 
                 <div className="w-full max-w-lg bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded-2xl flex">
-                    <input 
-                        type="search" 
+                    <input
+                        type="search"
+                        value={value}
+                        onChange={(e) => setValue(e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Enter") handleSearch();
+                        }}
                         placeholder="Search for concerts, sports, etc..."
                         className="w-full bg-transparent px-4 py-3 outline-none text-white placeholder-slate-300"
                     />
-                    <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold transition">
-                       <Search />
+
+                    <button
+                        onClick={handleSearch}
+                        className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-xl font-semibold transition"
+                    >
+                        <Search />
                     </button>
+
                 </div>
             </div>
         </section>

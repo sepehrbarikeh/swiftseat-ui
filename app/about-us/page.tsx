@@ -91,24 +91,24 @@ export default function AboutUsPage() {
             <p>
               📧 Email:
               <span className="text-blue-600 ml-2">
-                sepehr@example.com
+                sepehr.frlncr@gmail.com
               </span>
             </p>
 
             <p>
               💬 Telegram:
               <span className="text-blue-600 ml-2">
-                @sepehr_dev
+                @srbe_sepehr
               </span>
             </p>
 
             <p>
               🌐 GitHub:
               <Link
-                href="https://github.com"
+                href="https://github.com/sepehrbarikeh"
                 className="text-blue-600 ml-2"
               >
-                github.com/sepehr
+                github.com/sepehrbarikeh
               </Link>
             </p>
 

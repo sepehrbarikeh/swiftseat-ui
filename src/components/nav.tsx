@@ -5,10 +5,9 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import logo from "@/public/image/logo.png"
 import { useState } from "react"
-import { Search, X, Menu } from "lucide-react"
+import { X, Menu } from "lucide-react"
 
 export default function Navbar() {
-    const [searchOpen, setSearchOpen] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const pathname = usePathname()
 
@@ -25,7 +24,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between">
                     {/* Logo */}
                     <div className="flex max-w-12 items-center gap-2">
-                        <Image width={1248} height={832} src={logo} alt="logo" className="rounded-lg" />
+                        <Image width={1248} height={832} src={logo} alt="logo" loading="eager" className="rounded-lg" />
                         <h1 className="text-xl font-bold text-slate-900">SwiftSeat</h1>
                     </div>
 
@@ -43,10 +42,7 @@ export default function Navbar() {
 
                     {/* Actions */}
                     <div className="flex items-center gap-4">
-                        <button onClick={() => setSearchOpen(!searchOpen)} className="text-slate-600 hover:text-blue-600">
-                            <Search className="w-5 h-5" />
-                        </button>
-                        
+
                         <div className="hidden md:flex items-center gap-4">
                             <Link href="/auth/login" className="text-sm text-slate-600">Log in</Link>
                             <Link href="/auth/register" className="bg-blue-600 text-white px-4 py-2 rounded-xl text-sm font-semibold hover:bg-blue-700">Sign up</Link>
@@ -73,13 +69,6 @@ export default function Navbar() {
                         </div>
                     </div>
                 )}
-                {/* Search Overlay (اختیاری) */}
-            {searchOpen && (
-                <div className="absolute top-22 left-4 right-4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center">
-                    <input autoFocus className="flex-1 outline-none text-slate-900" placeholder="Search events..." />
-                    <button onClick={() => setSearchOpen(false)}><X className="w-5 h-5 text-slate-900" /></button>
-                </div>
-            )}
             </div>
 
             

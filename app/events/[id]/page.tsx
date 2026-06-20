@@ -34,7 +34,6 @@ export default function SeatPicker() {
     fetchData();
   }, [id]);
 
-
   const rows = useMemo(() => {
     return [...new Set(data.map((s) => s.row_name))];
   }, [data]);

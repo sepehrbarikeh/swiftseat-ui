@@ -13,7 +13,15 @@ export async function GetHomeConcert() {
 }
 
 export async function GetConserts(props?: Paginate) {
-   const res = await api.get(`/events?page=${props?.page}+limit=${props?.limit}+search=${props?.search}+location=${props?.location}`);
+   const params = new URLSearchParams();
+   if (props?.page) params.append('page', String(props.page));
+   if (props?.limit) params.append('limit', String(props.limit));
+   if (props?.search) params.append('search', String(props.search));
+   if (props?.location) params.append('location', String(props.location));
+
+   const queryString = params.toString();
+   const url = queryString ? `/events?${queryString}` : '/events';
+   const res = await api.get(url);
    return res
 }
 

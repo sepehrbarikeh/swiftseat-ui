@@ -26,6 +26,8 @@ export default function ConcertCard({ concert }: Props) {
                     alt={concert.title}
                     src={concert.ImageUrl || placeholder}
                     fill
+                    sizes="120px"
+                    priority
                     className="object-cover transition-all duration-300 group-hover:scale-110 group-hover:brightness-75"
                 />
 
