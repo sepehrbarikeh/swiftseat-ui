@@ -40,7 +40,7 @@ export default function ConcertCard({ concert }: Props) {
       `}
     >
       {/* IMAGE */}
-      <div className="relative h-[420px] overflow-hidden">
+      <div className="relative h-105 overflow-hidden">
 
         <Image
           src={imageUrl}
@@ -58,7 +58,7 @@ export default function ConcertCard({ concert }: Props) {
         />
 
         {/* Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/30 to-transparent" />
 
         {/* Status Badge */}
         <div
