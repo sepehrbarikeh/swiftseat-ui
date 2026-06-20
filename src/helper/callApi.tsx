@@ -3,10 +3,12 @@ import Cookies from "universal-cookie";
 
 const cookies = new Cookies();
 
-export const API_BASE = 'http://localhost:8080/api';
+export const API_BASE = 'http://localhost:8080';
+
+const API_ROUTES = API_BASE + "/api"
 
 const api = axios.create({
-    baseURL: API_BASE,
+    baseURL: API_ROUTES,
     timeout: 5000,
 });
 

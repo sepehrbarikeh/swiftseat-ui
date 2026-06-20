@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import { RegisterHandler } from "@/src/service/user";
 import { RegisterType } from "@/src/types/user";

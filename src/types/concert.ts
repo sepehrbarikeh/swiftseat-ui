@@ -5,7 +5,7 @@ export interface Concert {
     description: string;
     location: string;
     start_time: string;
-    ImageUrl: string;
+    ImageURL: string;
     available_seats: number;
     total_seats: 150;
 }

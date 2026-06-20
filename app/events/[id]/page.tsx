@@ -63,7 +63,6 @@ export default function SeatPicker() {
 
   const router = useRouter()
 
-  console.log(data)
 
   const onSubmit = async () => {
     try {

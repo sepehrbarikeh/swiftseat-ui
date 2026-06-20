@@ -1,5 +1,6 @@
 "use client"
 
+import LoadingBox from "@/src/components/loadingBox";
 import FantasyTicket from "@/src/components/ticketCard";
 import { MyTickets } from "@/src/service/user";
 import { Tickets } from "@/src/types/tickets";
@@ -30,7 +31,7 @@ export default function TicketHistoryPage() {
     <>
       {
         loading
-          ? <></>
+          ? <LoadingBox />
 
 
           : <div className="min-h-screen mt-20 bg-linear-to-br from-blue-50 via-white to-indigo-100 p-8">
@@ -45,7 +46,7 @@ export default function TicketHistoryPage() {
 
             {/* TICKETS */}
             <div className="grid gap-6">
-              {data.map((t,i) => (
+              {data?.map((t,i) => (
                 <FantasyTicket key={i} ticket={t} />
               ))}
             </div>
