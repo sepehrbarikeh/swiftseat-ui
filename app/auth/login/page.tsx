@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export default function Login() {
 
   const validationSchema = Yup.object({
@@ -28,7 +28,7 @@ export default function Login() {
     try {
       const res = await LoginHandler(value)
       if (res.data.role == "admin") {
-        router.push("/dmin")
+        router.push("/admin")
       } else {
       UserLoginToken(res.data.token)
         router.push("/")

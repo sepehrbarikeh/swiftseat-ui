@@ -56,6 +56,8 @@ export default function Page() {
     return data?.pages.flatMap((p) => p.events) || [];
   }, [data]);
 
+  console.log(events)
+
   // auto load more when visible
   useEffect(() => {
     if (!loaderRef.current) return;
