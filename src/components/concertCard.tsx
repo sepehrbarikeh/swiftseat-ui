@@ -123,8 +123,12 @@ export default function ConcertCard({ concert }: Props) {
             duration-500
           "
         >
-          <h3 className="text-white text-xl font-bold mb-3">
+            <h3 className="text-white text-xl font-bold mb-3">
             {concert.title}
+          </h3>
+
+            <h3 className="text-white text-sm mb-3">
+            {concert.description}
           </h3>
 
           <div className="space-y-2">
